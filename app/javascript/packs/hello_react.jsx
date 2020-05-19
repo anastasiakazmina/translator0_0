@@ -2,25 +2,34 @@
 // like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
 // of the page.
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
+import React from "react";
+import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 
-const Hello = props => (
-  <div>Hello {props.name}!</div>
-)
+const Hello = props => <div>Hello {props.name}!</div>;
 
 Hello.defaultProps = {
-  name: 'David'
-}
+  name: "David"
+};
 
 Hello.propTypes = {
   name: PropTypes.string
-}
+};
 
-document.addEventListener('DOMContentLoaded', () => {
+fetch("http://localhost:3000/api/synthroom/index.json")
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+  });
+
+document.addEventListener("DOMContentLoaded", () => {
+  let props = document.getElementsByTagName("div")[0].dataset.props;
+  let testContent = JSON.parse(props).test;
+
   ReactDOM.render(
-    <Hello name="React" />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})
+    <Hello name={testContent} />,
+    document.body.appendChild(document.createElement("div"))
+  );
+});
