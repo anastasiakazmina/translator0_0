@@ -1,4 +1,4 @@
-// Run this example by adding <%= javascript_pack_tag 'hello_react' %> to the head of your layout file,
+// Run this example by adding <%= javascript_pack_tag 'app' %> to the head of your layout file,
 // like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
 // of the page.
 
@@ -16,7 +16,7 @@ import Style from 'style-it';
 //     });
 // }
 
-const Fx = props => {
+export const Fx = props => {
   const callServerLocal = async () => {
     const response = await fetch(`http://localhost:3000/api/fxes/${props.fx.id}.json`);
     const data = await response.json();
@@ -54,20 +54,10 @@ const Fx = props => {
   );
 };
 
-const Rack = props => {
+export const Rack = props => {
   let fxElements = props.fxes.map(function(fx) {
     return <Fx fx={fx} key={fx.id} />;
   });
 
   return <div className="Rack">{fxElements}</div>;
 };
-
-document.addEventListener("DOMContentLoaded", () => {
-  let props = document.getElementsByTagName("div")[0].dataset.props;
-  let testContent = JSON.parse(props);
-
-  ReactDOM.render(
-    <Rack fxes={testContent} />,
-    document.body.appendChild(document.createElement("div"))
-  );
-});

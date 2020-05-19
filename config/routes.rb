@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'translator#index'
+
   namespace :api, format: :json do
     resources :fxes
     get 'synthroom/index'
