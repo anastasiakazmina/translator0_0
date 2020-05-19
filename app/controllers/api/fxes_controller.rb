@@ -18,7 +18,7 @@ class Api::FxesController < Api::ApplicationController
   # GET /fxes/1.json
   def show
     @fx = Fx.find(params[:id])
-    render json: fx.as_json_for_use
+    render json: @fx.as_json_for_use
   end
 
   # GET /fxes/new
