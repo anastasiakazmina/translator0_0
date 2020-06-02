@@ -1,2 +1,0 @@
-module SynthroomHelper
-end

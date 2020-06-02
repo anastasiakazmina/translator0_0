@@ -1,1 +1,0 @@
-<div data-props="<%= @fxes.array.as_json.to_json %>"></div>
