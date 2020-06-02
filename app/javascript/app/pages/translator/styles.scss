@@ -1,0 +1,21 @@
+#react-translator-app{
+  .src-component{
+    textarea{
+      height: 100px;
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .dst-component{
+    margin-top: 15px;
+    textarea{
+      height: 100px;
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+      background-color: #f2f2f2;
+    }
+  }
+}

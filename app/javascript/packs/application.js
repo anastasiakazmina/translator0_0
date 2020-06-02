@@ -17,3 +17,4 @@
 // const imagePath = (name) => images(name, true)
 
 import '../app/pages/synthroom'
+import '../app/pages/translator'
