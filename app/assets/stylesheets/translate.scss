@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'PixelFont';
+  src: url('/fonts/pixel.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+body.translator-controller{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+
+  &.index-action{
+    .container{
+      width: 400px;
+      margin: 100px auto 0 auto;
+
+      .container-content{
+        position: relative;
+
+        .pirate-image{
+          width: 100%;
+        }
+
+        .start-btn-image{
+          img{
+            width: 100px;
+            position: absolute;
+            top: 222px;
+            right: 0;
+          }
+
+          img.normal{ display: block; }
+          img.hovered{ display: none; }
+
+          &:hover{
+            cursor: pointer;
+            img.normal{ display: none; }
+            img.hovered{ display: block; }
+          }
+        }
+      }
+    }
+  }
+
+  &.translate-action{
+    min-width: 801px;
+
+    #react-translator-app{
+      max-width: 900px;
+      margin: 100px auto 0 auto;
+    }
+
+    .src-component{
+      float: left;
+    }
+
+    .dst-component{
+      float: right;
+    }
+
+    .textarea-container{
+      width: 400px;
+      position: relative;
+      img.background-img{
+        width: 100%;
+      }
+    }
+
+    textarea{
+      font-family: PixelFont, monospace;
+      position: absolute;
+      left: 81px;
+      top: 78px;
+      margin: 0;
+      width: 238px;
+      height: 222px;
+      background: transparent;
+      border: none;
+      resize: none;
+      overflow: hidden;
+      font-size: 17px;
+
+      &:focus{
+        outline:none;
+      }
+    }
+  }
+}

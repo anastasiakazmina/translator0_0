@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HSEADCYO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <script>
+      window.JSDATA = <%= raw(render partial: 'layouts/jsdata') %>;
+    </script>
+
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body class="<%= body_klass %>">
+    <%= yield %>
+  </body>
+</html>
